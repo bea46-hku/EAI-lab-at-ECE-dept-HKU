@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>ECE HKU | News</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Roboto:400,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+  
+  <style>
+    /* Events section styles */
+    .events-section {
+      margin-top: 30px;
+      margin-bottom: 40px;
+    }
+
+    .event-card {
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+      border-left: 4px solid #c7a252;
+      margin-bottom: 16px;
+      padding: 0;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      height: auto;
+      min-height: 100px;
+    }
+
+    .event-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+    }
+
+    .event-card.past-event {
+      border-left-color: #6c757d;
+    }
+
+    .event-card-body {
+      padding: 16px 20px;
+    }
+
+    .event-date {
+      font-size: 0.82rem;
+      color: #6c757d;
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+
+    .event-title {
+      font-weight: 700;
+      color: #024638;
+      font-size: 1rem;
+      margin-bottom: 2px;
+    }
+
+    .event-desc {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    .badge-upcoming {
+      background-color: #024638;
+      color: #fff;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .badge-past {
+      background-color: #6c757d;
+      color: #fff;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .section-divider {
+      margin: 30px 0;
+      border-top: 2px solid #e9ecef;
+    }
+
+    @media (max-width: 768px) {
+      .event-card {
+        margin-bottom: 12px;
+      }
+      .event-card-body {
+        padding: 14px 16px;
+      }
+      .events-section {
+        margin-top: 20px;
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="home.html">
+            <img src="images/eAI_Lab_logo_trans.png" alt="EAI ECE HKU Logo">
+            <span>
+              ECE HKU <small>Engineering AI Lab</small>
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav">
+                <!-- Home -->
+                <li class="nav-item">
+                  <a class="nav-link" href="home.html">Home</a>
+                </li>
+
+                <!-- About with Smooth Dropdown -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="about.html" id="aboutDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    About
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+                    <a class="dropdown-item" href="about.html">Our Mission</a>
+                    <a class="dropdown-item" href="about.html#vision">Vision</a>
+                  </div>
+                </li>
+
+                <!-- Research with Dropdown -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="research.html" id="researchDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    Research
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="researchDropdown">
+                    <a class="dropdown-item" href="research.html#ai-research">AI Research</a>
+                    <a class="dropdown-item" href="research.html#hardware-design">Hardware Design</a>
+                    <a class="dropdown-item" href="research.html#software-dev">Software Development</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="research.html#industry-collab">Industry Collaboration</a>
+                    <a class="dropdown-item" href="research.html#seminars">Seminars &amp; Events</a>
+                  </div>
+                </li>
+
+                <!-- Team with Smooth Dropdown -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="team.html" id="teamDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    Team
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="teamDropdown">
+                    <a class="dropdown-item" href="team.html">Faculty</a>
+                    <a class="dropdown-item" href="team.html#researchers">Researchers</a>
+                    <a class="dropdown-item" href="team.html#students">Students</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="team.html#alumni">Alumni</a>
+                  </div>
+                </li>
+
+                <!-- News with Dropdown -->
+                <li class="nav-item dropdown active">
+                  <a class="nav-link dropdown-toggle" href="news.html" id="newsDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    News
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="newsDropdown">
+                    <a class="dropdown-item" href="news.html#events">Events</a>
+                    <a class="dropdown-item" href="news.html#updates">Updates</a>
+                  </div>
+                </li>
+
+                <!-- Contact -->
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- ============================================ -->
+  <!-- NEWS SECTION - EVENTS + UPDATES             -->
+  <!-- ============================================ -->
+  <section class="news_section layout_padding">
+    <div class="container">
+
+      <!-- Page Heading -->
+      <div class="d-flex flex-column align-items-end">
+        <div class="custom_heading-container">
+          <hr>
+          <h2>News &amp; Events</h2>
+        </div>
+        <p>Stay updated with the latest developments from the EAI Lab at HKU.</p>
+      </div>
+
+      <!-- ========================================== -->
+      <!-- EVENTS SUBSECTION - with anchor #events   -->
+      <!-- ========================================== -->
+      <div id="events" class="events-section">
+        <h3 style="color: #024638; font-weight: 600; border-bottom: 2px solid #c7a252; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Events</h3>
+
+        <div class="row">
+          <!-- UPCOMING EVENTS - Left Column -->
+          <div class="col-md-6">
+            <h5 style="color: #024638; font-weight: 600; margin-bottom: 1rem;">
+              <span class="badge-upcoming">Upcoming</span>
+            </h5>
+
+            <div class="event-card">
+              <div class="event-card-body">
+                <div class="event-date">📅 <strong>May 12, 2025</strong></div>
+                <div class="event-title">AI in Engineering Symposium 2025</div>
+                <div class="event-desc">Keynotes from industry leaders, panel discussions, and poster sessions. Open to all researchers.</div>
+              </div>
+            </div>
+
+            <div class="event-card">
+              <div class="event-card-body">
+                <div class="event-date">📅 <strong>June 2–4, 2025</strong></div>
+                <div class="event-title">Hardware-Aware AI Workshop</div>
+                <div class="event-desc">Hands-on sessions on AI accelerator design, co-optimization, and edge deployment.</div>
+              </div>
+            </div>
+
+            <div class="event-card">
+              <div class="event-card-body">
+                <div class="event-date">📅 <strong>July 15, 2025</strong></div>
+                <div class="event-title">EAI Lab Industry Day</div>
+                <div class="event-desc">Meet our industry partners and explore collaboration opportunities in smart cities.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PAST EVENTS - Right Column -->
+          <div class="col-md-6">
+            <h5 style="color: #6c757d; font-weight: 600; margin-bottom: 1rem;">
+              <span class="badge-past">Past</span>
+            </h5>
+
+            <div class="event-card past-event">
+              <div class="event-card-body">
+                <div class="event-date">📅 <strong>March 10, 2025</strong></div>
+                <div class="event-title">Guest Lecture: Prof. Y. LeCun</div>
+                <div class="event-desc">"Energy-based models for robust AI" – recording available upon request.</div>
+              </div>
+            </div>
+
+            <div class="event-card past-event">
+              <div class="event-card-body">
+                <div class="event-date">📅 <strong>February 20, 2025</strong></div>
+                <div class="event-title">EAI Research Showcase</div>
+                <div class="event-desc">PhD students presented their work on neuromorphic computing and LLM efficiency.</div>
+              </div>
+            </div>
+
+            <div class="event-card past-event">
+              <div class="event-card-body">
+                <div class="event-date">📅 <strong>December 5, 2024</strong></div>
+                <div class="event-title">Industry Roundtable: AI Ethics</div>
+                <div class="event-desc">Panel discussion with representatives from Google, Meta, and local startups.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================== -->
+      <!-- DIVIDER                                   -->
+      <!-- ========================================== -->
+      <hr class="section-divider">
+
+      <!-- ========================================== -->
+      <!-- UPDATES SUBSECTION - with anchor #updates -->
+      <!-- ========================================== -->
+      <div id="updates" class="updates-section">
+        <h3 style="color: #024638; font-weight: 600; border-bottom: 2px solid #c7a252; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Updates</h3>
+        <p style="color: #6c757d; margin-bottom: 1.2rem;">Latest news from the lab – research breakthroughs, partnerships, and achievements.</p>
+
+        <!-- UPDATES LIST - Horizontal news items -->
+        <div id="updatesContainer">
+
+          <!-- Update 1 -->
+          <div class="news-item-horizontal">
+            <div class="img-box">
+              <img src="images/chiwah.jpg" alt="Research Conference 2024">
+            </div>
+            <div class="detail-box">
+              <div class="news-meta">
+                <span class="category">Event</span>
+                <span>December 15, 2024</span>
+              </div>
+              <h4>Research Conference 2024</h4>
+              <p>
+                The EAI Lab successfully hosted its annual research conference, showcasing groundbreaking work in AI hardware and intelligent systems. The event brought together researchers from across Asia.
+              </p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </div>
+
+          <!-- Update 2 -->
+          <div class="news-item-horizontal">
+            <div class="img-box">
+              <img src="images/haking.jpg" alt="New Lab Facilities">
+            </div>
+            <div class="detail-box">
+              <div class="news-meta">
+                <span class="category">Facilities</span>
+                <span>November 28, 2024</span>
+              </div>
+              <h4>New Lab Facilities</h4>
+              <p>
+                The EAI Lab has expanded its facilities with state-of-the-art equipment for AI chip design and embedded systems research. The new space includes a dedicated prototyping area and high-performance computing cluster.
+              </p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </div>
+
+          <!-- Update 3 -->
+          <div class="news-item-horizontal">
+            <div class="img-box">
+              <img src="images/cpd.jpg" alt="Industry Partnership">
+            </div>
+            <div class="detail-box">
+              <div class="news-meta">
+                <span class="category">Partnership</span>
+                <span>November 10, 2024</span>
+              </div>
+              <h4>Industry Partnership</h4>
+              <p>
+                EAI Lab has announced a new industry partnership to accelerate the development of AI solutions for smart cities. The collaboration will focus on edge computing and IoT applications.
+              </p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </div>
+
+          <!-- Update 4 -->
+          <div class="news-item-horizontal">
+            <div class="img-box">
+              <img src="images/redbrick.jpg" alt="AI Research Breakthrough">
+            </div>
+            <div class="detail-box">
+              <div class="news-meta">
+                <span class="category">Research</span>
+                <span>October 22, 2024</span>
+              </div>
+              <h4>AI Research Breakthrough</h4>
+              <p>
+                Researchers at EAI Lab have achieved a major breakthrough in energy-efficient neural network architectures, reducing power consumption by 40% while maintaining accuracy.
+              </p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </div>
+
+          <!-- Update 5 -->
+          <div class="news-item-horizontal">
+            <div class="img-box">
+              <img src="images/visitor centre.jpg" alt="Guest Lecture">
+            </div>
+            <div class="detail-box">
+              <div class="news-meta">
+                <span class="category">Event</span>
+                <span>October 5, 2024</span>
+              </div>
+              <h4>Guest Lecture Series</h4>
+              <p>
+                The EAI Lab hosted a distinguished guest lecture series featuring leading AI researchers from MIT, Stanford, and Tsinghua University discussing the future of AI engineering.
+              </p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </div>
+
+          <!-- Update 6 -->
+          <div class="news-item-horizontal">
+            <div class="img-box">
+              <img src="images/haking.jpg" alt="Student Achievement">
+            </div>
+            <div class="detail-box">
+              <div class="news-meta">
+                <span class="category">Achievement</span>
+                <span>September 18, 2024</span>
+              </div>
+              <h4>Student Achievement</h4>
+              <p>
+                EAI Lab students have won the prestigious HKU Innovation Award for their project on AI-powered medical diagnostics, competing against over 100 teams from across the university.
+              </p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ========================================== -->
+        <!-- PAGINATION for Updates                     -->
+        <!-- ========================================== -->
+        <div class="text-center" style="margin-top: 40px;">
+          <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center" id="paginationUpdates">
+              <!-- Pagination generated by JavaScript -->
+            </ul>
+          </nav>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <!-- end news section -->
+
+  <!-- info section -->
+  <section class="info_section layout_padding">
+    <div class="container">
+      <div class="info_social">
+        <div>
+          <a href="#">
+            <img src="images/fb.png" alt="Facebook">
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <img src="images/twitter.png" alt="Twitter">
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <img src="images/linkedin.png" alt="LinkedIn">
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <img src="images/insta.png" alt="Instagram">
+          </a>
+        </div>
+      </div>
+      <div>
+        <p>
+          ECE Department, The University of Hong Kong
+          <br>Engineering the Future of AI
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- end info_section -->
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+    <p>
+      &copy; 2024 All Rights Reserved
+      <a href="https://www.eee.hku.hk/">ECE Department, HKU</a>
+    </p>
+  </section>
+  <!-- footer section -->
+
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+
+  <!-- ============================================ -->
+  <!-- DYNAMIC PAGINATION SCRIPT for Updates        -->
+  <!-- ============================================ -->
+  <script>
+    (function() {
+      const ITEMS_PER_PAGE = 4;
+
+      const container = document.getElementById('updatesContainer');
+      const allItems = container ? container.querySelectorAll('.news-item-horizontal') : [];
+      const totalItems = allItems.length;
+      const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+      const paginationEl = document.getElementById('paginationUpdates');
+      let currentPage = 1;
+
+      if (totalPages <= 1) {
+        if (paginationEl) {
+          paginationEl.parentElement.parentElement.style.display = 'none';
+        }
+        allItems.forEach(function(item) {
+          item.style.display = 'flex';
+        });
+        return;
+      }
+
+      function showPage(pageNumber) {
+        if (pageNumber < 1) pageNumber = 1;
+        if (pageNumber > totalPages) pageNumber = totalPages;
+        currentPage = pageNumber;
+
+        const startIndex = (pageNumber - 1) * ITEMS_PER_PAGE;
+        const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, totalItems);
+
+        allItems.forEach(function(item, index) {
+          if (index >= startIndex && index < endIndex) {
+            item.style.display = 'flex';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+
+        updatePagination(pageNumber);
+      }
+
+      function updatePagination(activePage) {
+        let paginationHTML = '';
+
+        paginationHTML += `
+          <li class="page-item ${activePage === 1 ? 'disabled' : ''}">
+            <a class="page-link" href="#" data-page="${activePage - 1}" aria-disabled="${activePage === 1}">Previous</a>
+          </li>
+        `;
+
+        for (let i = 1; i <= totalPages; i++) {
+          paginationHTML += `
+            <li class="page-item ${i === activePage ? 'active' : ''}">
+              <a class="page-link" href="#" data-page="${i}">${i}</a>
+            </li>
+          `;
+        }
+
+        paginationHTML += `
+          <li class="page-item ${activePage === totalPages ? 'disabled' : ''}">
+            <a class="page-link" href="#" data-page="${activePage + 1}" aria-disabled="${activePage === totalPages}">Next</a>
+          </li>
+        `;
+
+        paginationEl.innerHTML = paginationHTML;
+
+        const pageLinks = paginationEl.querySelectorAll('.page-link');
+        pageLinks.forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const page = parseInt(this.getAttribute('data-page'));
+            if (page && page !== currentPage && page >= 1 && page <= totalPages) {
+              showPage(page);
+              document.querySelector('.updates-section').scrollIntoView({ behavior: 'smooth' });
+            }
+          });
+        });
+      }
+
+      showPage(1);
+
+    })();
+  </script>
+
+  <!-- Shrink header on scroll -->
+  <script>
+    window.addEventListener('scroll', function() {
+      var header = document.querySelector('.header_section');
+      if (header) {
+        if (window.scrollY > 50) {
+          header.classList.add('shrink');
+        } else {
+          header.classList.remove('shrink');
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
