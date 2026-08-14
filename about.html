@@ -3,6 +3,7 @@
 
 <head>
   <!-- Basic -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <!-- Mobile Metas -->
@@ -12,7 +13,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>ECE HKU | About EAI Lab</title>
+  <title>ECE HKU | About e-AI Lab</title>
 
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css"
@@ -27,6 +28,87 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+  
+  <style>
+    /* About page subsections */
+    .vision-section {
+      background-color: #ffffff;
+      padding: 60px 0;
+    }
+    
+    .policy-section {
+      background-color: #f8f9fa;
+      padding: 60px 0;
+    }
+    
+    .subsection-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 40px 35px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+      border-left: 4px solid #c7a252;
+      margin-top: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .subsection-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.10);
+    }
+    
+    .subsection-card h3 {
+      color: #024638;
+      font-weight: 700;
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+    
+    .subsection-card p {
+      color: #555;
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+    
+    .subsection-card ul {
+      color: #555;
+      line-height: 2;
+      padding-left: 20px;
+    }
+    
+    .subsection-card ul li {
+      margin-bottom: 8px;
+    }
+    
+    .subsection-card ul li strong {
+      color: #024638;
+    }
+    
+    .anchor-offset {
+      scroll-margin-top: 90px;
+    }
+    
+    .back-to-top {
+      display: inline-block;
+      margin-top: 20px;
+      color: #024638;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    
+    .back-to-top:hover {
+      color: #c7a252;
+    }
+    
+    @media (max-width: 768px) {
+      .subsection-card {
+        padding: 25px 20px;
+      }
+      .subsection-card h3 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
 </head>
 
 <body class="sub_page">
@@ -36,7 +118,7 @@
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container">
           <a class="navbar-brand" href="home.html">
-            <img src="images/eAI_Lab_logo_trans.png" alt="EAI ECE HKU Logo">
+            <img src="images/eAI_Lab_logo_trans.png" alt="e-AI ECE HKU Logo">
             <span>
               ECE HKU <small>Engineering AI Lab</small>
             </span>
@@ -54,7 +136,7 @@
                   <a class="nav-link" href="home.html">Home</a>
                 </li>
 
-                <!-- About with Smooth Dropdown -->
+                <!-- About -->
                 <li class="nav-item dropdown active">
                   <a class="nav-link dropdown-toggle" href="about.html" id="aboutDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     About
@@ -62,25 +144,26 @@
                   <div class="dropdown-menu" aria-labelledby="aboutDropdown">
                     <a class="dropdown-item" href="about.html">Our Mission</a>
                     <a class="dropdown-item" href="about.html#vision">Vision</a>
+                    <a class="dropdown-item" href="about.html#policy">Policy</a>
                   </div>
                 </li>
 
-                <!-- Research with Dropdown -->
+                <!-- Research -->
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="research.html" id="researchDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     Research
                   </a>
                   <div class="dropdown-menu" aria-labelledby="researchDropdown">
-                    <a class="dropdown-item" href="research.html#ai-research">AI Research</a>
-                    <a class="dropdown-item" href="research.html#hardware-design">Hardware Design</a>
-                    <a class="dropdown-item" href="research.html#software-dev">Software Development</a>
+                    <a class="dropdown-item" href="research.html#esg">ESG</a>
+                    <a class="dropdown-item" href="research.html#ai-smart-bike">AI Smart Bike</a>
+                    <a class="dropdown-item" href="research.html#educational-technology">Educational Technology</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="research.html#industry-collab">Industry Collaboration</a>
-                    <a class="dropdown-item" href="research.html#seminars">Seminars &amp; Events</a>
+                    <a class="dropdown-item" href="research.html#published-papers">Published Papers</a>
+                    <a class="dropdown-item" href="research.html#awards">Awards</a>
                   </div>
                 </li>
 
-                <!-- Team with Smooth Dropdown -->
+                <!-- Team -->
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="team.html" id="teamDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     Team
@@ -94,7 +177,7 @@
                   </div>
                 </li>
 
-                <!-- News with Dropdown -->
+                <!-- News -->
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="news.html" id="newsDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     News
@@ -109,16 +192,30 @@
                 <li class="nav-item">
                   <a class="nav-link" href="contact.html">Contact</a>
                 </li>
+
+                <!-- SEARCH - After Contact -->
+                <li class="nav-item search-nav-item">
+                  <button class="nav_search-btn" id="searchToggle" aria-label="Search">
+                    <i class="bi bi-search"></i>
+                  </button>
+                </li>
               </ul>
             </div>
           </div>
         </nav>
+        <!-- Search Form and Results (outside navbar) -->
+        <div class="search-form" id="searchForm">
+          <input type="text" id="searchInput" placeholder="Search pages... (Ctrl+K)" />
+          <button type="submit" id="searchSubmit">Search</button>
+          <button type="button" id="searchClose">✕</button>
+        </div>
+        <div id="searchResults" class="search-results"></div>
       </div>
     </header>
     <!-- end header section -->
   </div>
 
-  <!-- about section -->
+  <!-- about section - Mission -->
   <section class="about_section layout_padding">
     <div class="container">
       <div class="row">
@@ -130,7 +227,7 @@
               <hr>
             </div>
             <p>
-              The Engineering AI (EAI) Lab, developed by the Department of Electrical and Computer Engineering (ECE) at
+              The Engineering AI (e-AI) Lab, developed by the Department of Electrical and Computer Engineering (ECE) at
               the University of Hong Kong (HKU), is a cutting-edge research initiative.
               <br><br>
               We focus on advancing the frontiers of Artificial Intelligence, specifically engineered for
@@ -155,6 +252,92 @@
     </div>
   </section>
   <!-- end about section -->
+
+  <!-- Vision Section -->
+  <section id="vision" class="vision-section anchor-offset">
+    <div class="container">
+      <div class="custom_heading-container" style="margin-bottom: 20px;">
+        <hr>
+        <h2>Vision</h2>
+      </div>
+      
+      <div class="subsection-card">
+        <h3>Our Vision for the Future</h3>
+        <p>
+          The e-AI Lab envisions a future where artificial intelligence is seamlessly integrated into every aspect of 
+          engineering, creating intelligent systems that are efficient, sustainable, and accessible to all.
+        </p>
+        <p>
+          We aspire to be a global leader in AI engineering research, driving innovation that addresses the most 
+          pressing challenges in technology, society, and the environment.
+        </p>
+        <ul>
+          <li><strong>Excellence in Research:</strong> Pushing the boundaries of AI through cutting-edge research and development.</li>
+          <li><strong>Innovation & Impact:</strong> Creating real-world solutions that improve lives and industries.</li>
+          <li><strong>Collaboration:</strong> Fostering partnerships with academia, industry, and government.</li>
+          <li><strong>Talent Development:</strong> Nurturing the next generation of AI leaders and innovators.</li>
+          <li><strong>Sustainability:</strong> Building AI systems that are environmentally responsible and energy-efficient.</li>
+        </ul>
+        <p>
+          By 2030, we aim to establish the e-AI Lab as a premier destination for AI engineering research in Asia,
+          with a global network of collaborators and a track record of transformative innovations.
+        </p>
+        <a href="#top" class="back-to-top">↑ Back to Top</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Policy Section -->
+  <section id="policy" class="policy-section anchor-offset">
+    <div class="container">
+      <div class="custom_heading-container" style="margin-bottom: 20px;">
+        <hr>
+        <h2>Policy</h2>
+      </div>
+      
+      <div class="subsection-card">
+        <h3>Policy & Governance Framework</h3>
+        <p>
+          The e-AI Lab is committed to conducting research and development activities that adhere to the highest 
+          ethical standards and regulatory requirements. Our policy framework ensures responsible AI development.
+        </p>
+        
+        <h4 style="color: #024638; font-weight: 600; margin-top: 25px; margin-bottom: 10px;">Research Ethics</h4>
+        <ul>
+          <li><strong>Responsible AI:</strong> All research projects must consider ethical implications and societal impact.</li>
+          <li><strong>Data Privacy:</strong> We adhere to strict data protection regulations and privacy-by-design principles.</li>
+          <li><strong>Transparency:</strong> Our research methodologies and findings are published openly.</li>
+          <li><strong>Inclusivity:</strong> We ensure our research benefits diverse communities and avoids bias.</li>
+        </ul>
+        
+        <h4 style="color: #024638; font-weight: 600; margin-top: 25px; margin-bottom: 10px;">Intellectual Property</h4>
+        <ul>
+          <li><strong>Open Innovation:</strong> We support open-source initiatives where appropriate.</li>
+          <li><strong>Patent Strategy:</strong> We protect innovations that have commercial potential.</li>
+          <li><strong>Collaboration Agreements:</strong> Clear IP frameworks are established with all partners.</li>
+        </ul>
+        
+        <h4 style="color: #024638; font-weight: 600; margin-top: 25px; margin-bottom: 10px;">Industry Collaboration Policy</h4>
+        <ul>
+          <li><strong>Transparent Partnerships:</strong> All collaborations are conducted with transparency and mutual benefit.</li>
+          <li><strong>Knowledge Transfer:</strong> We facilitate the transfer of knowledge between academia and industry.</li>
+          <li><strong>Conflict of Interest:</strong> Clear policies are in place to manage potential conflicts.</li>
+        </ul>
+        
+        <h4 style="color: #024638; font-weight: 600; margin-top: 25px; margin-bottom: 10px;">Environmental & Social Governance (ESG)</h4>
+        <ul>
+          <li><strong>Sustainable Practices:</strong> We minimize environmental impact in our research activities.</li>
+          <li><strong>Community Engagement:</strong> We actively engage with local communities and stakeholders.</li>
+          <li><strong>Social Responsibility:</strong> We ensure our research contributes to social welfare and equity.</li>
+        </ul>
+        
+        <p style="margin-top: 20px;">
+          For detailed policy documents or inquiries, please <a href="contact.html" style="color: #024638; font-weight: 600;">contact us</a>.
+        </p>
+        <a href="#top" class="back-to-top">↑ Back to Top</a>
+      </div>
+    </div>
+  </section>
 
   <!-- info section -->
   <section class="info_section layout_padding">
@@ -216,5 +399,242 @@
   });
 </script>
 
+  <script>
+    // =============================================
+    // SEARCH FUNCTIONALITY
+    // =============================================
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Elements
+      const searchToggle = document.getElementById('searchToggle');
+      const searchForm = document.getElementById('searchForm');
+      const searchInput = document.getElementById('searchInput');
+      const searchClose = document.getElementById('searchClose');
+      const searchSubmit = document.getElementById('searchSubmit');
+      const searchResults = document.getElementById('searchResults');
+
+      // Page data for search - edit this to match your site structure
+      const pages = [
+        {
+          title: 'Home',
+          url: 'home.html',
+          description: 'Engineering AI Lab at HKU - Home page with research areas, team highlights, and latest news.',
+          keywords: ['home', 'ece', 'hku', 'engineering', 'ai', 'lab', 'artificial intelligence']
+        },
+        {
+          title: 'About - Mission',
+          url: 'about.html',
+          description: 'Learn about the e-AI Lab mission, vision, and research initiatives at the University of Hong Kong.',
+          keywords: ['about', 'mission', 'vision', 'ece', 'hku', 'engineering', 'ai', 'lab']
+        },
+        {
+          title: 'About - Vision',
+          url: 'about.html#vision',
+          description: 'Our vision for the future of AI engineering research at HKU, focusing on excellence, innovation, and sustainability.',
+          keywords: ['vision', 'future', 'excellence', 'innovation', 'sustainability', 'ai', 'engineering']
+        },
+        {
+          title: 'About - Policy',
+          url: 'about.html#policy',
+          description: 'Policy and governance framework for responsible AI research, including ethics, IP, and ESG guidelines.',
+          keywords: ['policy', 'ethics', 'governance', 'responsible', 'ai', 'ip', 'intellectual', 'property', 'esg']
+        },
+        {
+          title: 'Research',
+          url: 'research.html',
+          description: 'Explore our research areas including Published Papers, hardware design, software development, and ESGs.',
+          keywords: ['research', 'ai', 'hardware', 'software', 'industry', 'collaboration', 'seminars', 'events']
+        },
+        {
+          title: 'Team',
+          url: 'team.html',
+          description: 'Meet our faculty, researchers, students, and alumni at the e-AI Lab.',
+          keywords: ['team', 'faculty', 'researchers', 'students', 'alumni', 'people']
+        },
+        {
+          title: 'News',
+          url: 'news.html',
+          description: 'Stay updated with the latest events, updates, and announcements from the e-AI Lab.',
+          keywords: ['news', 'events', 'updates', 'conference', 'workshop', 'seminar', 'announcements']
+        },
+        {
+          title: 'Contact',
+          url: 'contact.html',
+          description: 'Get in touch with the e-AI Lab at HKU. Find our location, email, and contact form.',
+          keywords: ['contact', 'email', 'location', 'directions', 'phone', 'map']
+        },
+        {
+          title: 'Join e-AI Lab',
+          url: 'fill.html',
+          description: 'Apply to join the e-AI Lab as a researcher or student at HKU.',
+          keywords: ['join', 'apply', 'career', 'opportunities', 'positions', 'students', 'researchers']
+        }
+      ];
+
+      // Toggle search form
+      function toggleSearch() {
+        searchForm.classList.toggle('active');
+        searchResults.classList.remove('active');
+        searchResults.innerHTML = '';
+        if (searchForm.classList.contains('active')) {
+          searchInput.focus();
+        }
+      }
+
+      // Open search
+      function openSearch() {
+        searchForm.classList.add('active');
+        searchInput.focus();
+      }
+
+      // Close search
+      function closeSearch() {
+        searchForm.classList.remove('active');
+        searchResults.classList.remove('active');
+        searchResults.innerHTML = '';
+        searchInput.value = '';
+      }
+
+      // Search function
+      function performSearch(query) {
+        query = query.trim().toLowerCase();
+        
+        if (query.length === 0) {
+          searchResults.classList.remove('active');
+          searchResults.innerHTML = '';
+          return;
+        }
+
+        const results = pages.filter(page => {
+          if (page.title.toLowerCase().includes(query)) return true;
+          if (page.description.toLowerCase().includes(query)) return true;
+          if (page.keywords && page.keywords.some(k => k.toLowerCase().includes(query))) return true;
+          return false;
+        });
+
+        displayResults(results, query);
+      }
+
+      // Display search results
+      function displayResults(results, query) {
+        const queryWords = query.split(' ').filter(w => w.length > 0);
+        
+        if (results.length === 0) {
+          searchResults.innerHTML = `
+            <div class="no-results">
+              <i class="bi bi-search"></i>
+              No results found for "<strong>${query}</strong>"
+              <br><small style="color: #aaa; font-size: 12px;">Try different keywords</small>
+            </div>
+          `;
+          searchResults.classList.add('active');
+          return;
+        }
+
+        let html = '';
+        results.forEach(page => {
+          let title = page.title;
+          queryWords.forEach(word => {
+            const regex = new RegExp(`(${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+            title = title.replace(regex, '<span class="highlight">$1</span>');
+          });
+
+          let desc = page.description;
+          queryWords.forEach(word => {
+            const regex = new RegExp(`(${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+            desc = desc.replace(regex, '<span class="highlight">$1</span>');
+          });
+
+          html += `
+            <div class="result-item" onclick="window.location.href='${page.url}'">
+              <div class="result-title">${title}</div>
+              <div class="result-desc">${desc}</div>
+              <div class="result-url">${page.url}</div>
+            </div>
+          `;
+        });
+
+        searchResults.innerHTML = html;
+        searchResults.classList.add('active');
+      }
+
+      // Event listeners
+      if (searchToggle) {
+        searchToggle.addEventListener('click', function(e) {
+          e.stopPropagation();
+          toggleSearch();
+        });
+      }
+
+      if (searchClose) {
+        searchClose.addEventListener('click', function(e) {
+          e.stopPropagation();
+          closeSearch();
+        });
+      }
+
+      if (searchSubmit) {
+        searchSubmit.addEventListener('click', function(e) {
+          e.preventDefault();
+          performSearch(searchInput.value);
+        });
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener('keyup', function(e) {
+          if (e.key === 'Enter') {
+            performSearch(this.value);
+          } else {
+            clearTimeout(this.debounceTimer);
+            this.debounceTimer = setTimeout(() => {
+              performSearch(this.value);
+            }, 300);
+          }
+        });
+
+        searchInput.addEventListener('focus', function() {
+          if (this.value.length > 0) {
+            performSearch(this.value);
+          }
+        });
+      }
+
+      // Close search on click outside
+      document.addEventListener('click', function(e) {
+        const searchContainer = document.querySelector('.header_section');
+        const resultsContainer = document.getElementById('searchResults');
+        
+        if (searchContainer && !searchContainer.contains(e.target) && 
+            resultsContainer && !resultsContainer.contains(e.target)) {
+          if (e.target.closest('.result-item')) return;
+          closeSearch();
+        }
+      });
+
+      // Keyboard shortcut: Ctrl+K or Cmd+K to open search
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          if (searchForm.classList.contains('active')) {
+            closeSearch();
+          } else {
+            openSearch();
+          }
+        }
+        if (e.key === 'Escape') {
+          closeSearch();
+        }
+      });
+
+      // Prevent default form submission
+      const searchFormElement = document.querySelector('.search-form');
+      if (searchFormElement) {
+        searchFormElement.addEventListener('submit', function(e) {
+          e.preventDefault();
+          performSearch(searchInput.value);
+        });
+      }
+    });
+    </script>
 </body>
 </html>

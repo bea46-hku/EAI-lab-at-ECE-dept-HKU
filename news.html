@@ -3,6 +3,7 @@
 
 <head>
   <!-- Basic -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <!-- Mobile Metas -->
@@ -106,6 +107,41 @@
       border-top: 2px solid #e9ecef;
     }
 
+    /* NEW: Section heading styles to match site */
+    .section-heading-wrapper {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .section-heading-wrapper .section-line {
+      flex: 0 0 60px;
+      height: 3px;
+      background-color: #c7a252;
+      margin-right: 15px;
+    }
+    
+    .section-heading-wrapper h3 {
+      color: #024638;
+      font-weight: 700;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 0;
+    }
+    
+    .section-heading-wrapper .section-sub {
+      margin-left: 15px;
+      color: #999;
+      font-size: 0.9rem;
+      font-weight: 400;
+      text-transform: none;
+    }
+
+    .anchor-offset {
+      scroll-margin-top: 90px;
+    }
+
     @media (max-width: 768px) {
       .event-card {
         margin-bottom: 12px;
@@ -116,6 +152,16 @@
       .events-section {
         margin-top: 20px;
         margin-bottom: 30px;
+      }
+      .section-heading-wrapper .section-line {
+        flex: 0 0 40px;
+      }
+      .section-heading-wrapper h3 {
+        font-size: 1.4rem;
+      }
+      .section-heading-wrapper .section-sub {
+        font-size: 0.75rem;
+        margin-left: 10px;
       }
     }
   </style>
@@ -128,7 +174,7 @@
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container">
           <a class="navbar-brand" href="home.html">
-            <img src="images/eAI_Lab_logo_trans.png" alt="EAI ECE HKU Logo">
+            <img src="images/eAI_Lab_logo_trans.png" alt="e-AI ECE HKU Logo">
             <span>
               ECE HKU <small>Engineering AI Lab</small>
             </span>
@@ -146,7 +192,7 @@
                   <a class="nav-link" href="home.html">Home</a>
                 </li>
 
-                <!-- About with Smooth Dropdown -->
+                <!-- About -->
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="about.html" id="aboutDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     About
@@ -154,31 +200,32 @@
                   <div class="dropdown-menu" aria-labelledby="aboutDropdown">
                     <a class="dropdown-item" href="about.html">Our Mission</a>
                     <a class="dropdown-item" href="about.html#vision">Vision</a>
+                    <a class="dropdown-item" href="about.html#policy">Policy</a>
                   </div>
                 </li>
 
-                <!-- Research with Dropdown -->
+                <!-- Research -->
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="research.html" id="researchDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     Research
                   </a>
                   <div class="dropdown-menu" aria-labelledby="researchDropdown">
-                    <a class="dropdown-item" href="research.html#ai-research">AI Research</a>
-                    <a class="dropdown-item" href="research.html#hardware-design">Hardware Design</a>
-                    <a class="dropdown-item" href="research.html#software-dev">Software Development</a>
+                    <a class="dropdown-item" href="research.html#esg">ESG</a>
+                    <a class="dropdown-item" href="research.html#ai-smart-bike">AI Smart Bike</a>
+                    <a class="dropdown-item" href="research.html#educational-technology">Educational Technology</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="research.html#industry-collab">Industry Collaboration</a>
-                    <a class="dropdown-item" href="research.html#seminars">Seminars &amp; Events</a>
+                    <a class="dropdown-item" href="research.html#published-papers">Published Papers</a>
+                    <a class="dropdown-item" href="research.html#awards">Awards</a>
                   </div>
                 </li>
 
-                <!-- Team with Smooth Dropdown -->
+                <!-- Team -->
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="team.html" id="teamDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     Team
                   </a>
                   <div class="dropdown-menu" aria-labelledby="teamDropdown">
-                    <a class="dropdown-item" href="team.html">Faculty</a>
+                    <a class="dropdown-item" href="team.html#faculty">Faculty</a>
                     <a class="dropdown-item" href="team.html#researchers">Researchers</a>
                     <a class="dropdown-item" href="team.html#students">Students</a>
                     <div class="dropdown-divider"></div>
@@ -186,7 +233,7 @@
                   </div>
                 </li>
 
-                <!-- News with Dropdown -->
+                <!-- News -->
                 <li class="nav-item dropdown active">
                   <a class="nav-link dropdown-toggle" href="news.html" id="newsDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     News
@@ -201,10 +248,24 @@
                 <li class="nav-item">
                   <a class="nav-link" href="contact.html">Contact</a>
                 </li>
+
+                <!-- SEARCH - After Contact -->
+                <li class="nav-item search-nav-item">
+                  <button class="nav_search-btn" id="searchToggle" aria-label="Search">
+                    <i class="bi bi-search"></i>
+                  </button>
+                </li>
               </ul>
             </div>
           </div>
         </nav>
+        <!-- Search Form and Results (outside navbar) -->
+        <div class="search-form" id="searchForm">
+          <input type="text" id="searchInput" placeholder="Search pages... (Ctrl+K)" />
+          <button type="submit" id="searchSubmit">Search</button>
+          <button type="button" id="searchClose">✕</button>
+        </div>
+        <div id="searchResults" class="search-results"></div>
       </div>
     </header>
     <!-- end header section -->
@@ -222,14 +283,19 @@
           <hr>
           <h2>News &amp; Events</h2>
         </div>
-        <p>Stay updated with the latest developments from the EAI Lab at HKU.</p>
+        <p>Stay updated with the latest developments from the e-AI Lab at HKU.</p>
       </div>
 
       <!-- ========================================== -->
       <!-- EVENTS SUBSECTION - with anchor #events   -->
       <!-- ========================================== -->
-      <div id="events" class="events-section">
-        <h3 style="color: #024638; font-weight: 600; border-bottom: 2px solid #c7a252; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Events</h3>
+      <div id="events" class="events-section anchor-offset">
+        
+        <!-- VISIBLE SECTION HEADING -->
+        <div class="section-heading-wrapper">
+          <span class="section-line"></span>
+          <h3>Events <span class="section-sub">Upcoming &amp; Past</span></h3>
+        </div>
 
         <div class="row">
           <!-- UPCOMING EVENTS - Left Column -->
@@ -257,7 +323,7 @@
             <div class="event-card">
               <div class="event-card-body">
                 <div class="event-date">📅 <strong>July 15, 2025</strong></div>
-                <div class="event-title">EAI Lab Industry Day</div>
+                <div class="event-title">e-AI Lab Industry Day</div>
                 <div class="event-desc">Meet our industry partners and explore collaboration opportunities in smart cities.</div>
               </div>
             </div>
@@ -280,7 +346,7 @@
             <div class="event-card past-event">
               <div class="event-card-body">
                 <div class="event-date">📅 <strong>February 20, 2025</strong></div>
-                <div class="event-title">EAI Research Showcase</div>
+                <div class="event-title">e-AI Research Showcase</div>
                 <div class="event-desc">PhD students presented their work on neuromorphic computing and LLM efficiency.</div>
               </div>
             </div>
@@ -304,8 +370,13 @@
       <!-- ========================================== -->
       <!-- UPDATES SUBSECTION - with anchor #updates -->
       <!-- ========================================== -->
-      <div id="updates" class="updates-section">
-        <h3 style="color: #024638; font-weight: 600; border-bottom: 2px solid #c7a252; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Updates</h3>
+      <div id="updates" class="updates-section anchor-offset">
+        
+        <!-- VISIBLE SECTION HEADING -->
+        <div class="section-heading-wrapper">
+          <span class="section-line"></span>
+          <h3>Updates <span class="section-sub">Latest News</span></h3>
+        </div>
         <p style="color: #6c757d; margin-bottom: 1.2rem;">Latest news from the lab – research breakthroughs, partnerships, and achievements.</p>
 
         <!-- UPDATES LIST - Horizontal news items -->
@@ -323,7 +394,7 @@
               </div>
               <h4>Research Conference 2024</h4>
               <p>
-                The EAI Lab successfully hosted its annual research conference, showcasing groundbreaking work in AI hardware and intelligent systems. The event brought together researchers from across Asia.
+                The e-AI Lab successfully hosted its annual research conference, showcasing groundbreaking work in AI hardware and intelligent systems. The event brought together researchers from across Asia.
               </p>
               <a href="#" class="read-more">Read More →</a>
             </div>
@@ -341,7 +412,7 @@
               </div>
               <h4>New Lab Facilities</h4>
               <p>
-                The EAI Lab has expanded its facilities with state-of-the-art equipment for AI chip design and embedded systems research. The new space includes a dedicated prototyping area and high-performance computing cluster.
+                The e-AI Lab has expanded its facilities with state-of-the-art equipment for AI chip design and embedded systems research. The new space includes a dedicated prototyping area and high-performance computing cluster.
               </p>
               <a href="#" class="read-more">Read More →</a>
             </div>
@@ -359,7 +430,7 @@
               </div>
               <h4>Industry Partnership</h4>
               <p>
-                EAI Lab has announced a new industry partnership to accelerate the development of AI solutions for smart cities. The collaboration will focus on edge computing and IoT applications.
+                e-AI Lab has announced a new industry partnership to accelerate the development of AI solutions for smart cities. The collaboration will focus on edge computing and IoT applications.
               </p>
               <a href="#" class="read-more">Read More →</a>
             </div>
@@ -377,7 +448,7 @@
               </div>
               <h4>AI Research Breakthrough</h4>
               <p>
-                Researchers at EAI Lab have achieved a major breakthrough in energy-efficient neural network architectures, reducing power consumption by 40% while maintaining accuracy.
+                Researchers at e-AI Lab have achieved a major breakthrough in energy-efficient neural network architectures, reducing power consumption by 40% while maintaining accuracy.
               </p>
               <a href="#" class="read-more">Read More →</a>
             </div>
@@ -395,7 +466,7 @@
               </div>
               <h4>Guest Lecture Series</h4>
               <p>
-                The EAI Lab hosted a distinguished guest lecture series featuring leading AI researchers from MIT, Stanford, and Tsinghua University discussing the future of AI engineering.
+                The e-AI Lab hosted a distinguished guest lecture series featuring leading AI researchers from MIT, Stanford, and Tsinghua University discussing the future of AI engineering.
               </p>
               <a href="#" class="read-more">Read More →</a>
             </div>
@@ -413,7 +484,7 @@
               </div>
               <h4>Student Achievement</h4>
               <p>
-                EAI Lab students have won the prestigious HKU Innovation Award for their project on AI-powered medical diagnostics, competing against over 100 teams from across the university.
+                e-AI Lab students have won the prestigious HKU Innovation Award for their project on AI-powered medical diagnostics, competing against over 100 teams from across the university.
               </p>
               <a href="#" class="read-more">Read More →</a>
             </div>
@@ -585,5 +656,178 @@
     });
   </script>
 
+  <script>
+    // =============================================
+    // SEARCH FUNCTIONALITY
+    // =============================================
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchToggle = document.getElementById('searchToggle');
+      const searchForm = document.getElementById('searchForm');
+      const searchInput = document.getElementById('searchInput');
+      const searchClose = document.getElementById('searchClose');
+      const searchSubmit = document.getElementById('searchSubmit');
+      const searchResults = document.getElementById('searchResults');
+
+      const pages = [
+        { title: 'Home', url: 'home.html', description: 'Engineering AI Lab at HKU - Home page with research areas, team highlights, and latest news.', keywords: ['home', 'ece', 'hku', 'engineering', 'ai', 'lab'] },
+        { title: 'About - Mission', url: 'about.html', description: 'Learn about the e-AI Lab mission, vision, and research initiatives.', keywords: ['about', 'mission', 'vision', 'ece', 'hku'] },
+        { title: 'About - Vision', url: 'about.html#vision', description: 'Our vision for the future of AI engineering research at HKU.', keywords: ['vision', 'future', 'innovation', 'sustainability'] },
+        { title: 'About - Policy', url: 'about.html#policy', description: 'Policy and governance framework for responsible AI research.', keywords: ['policy', 'ethics', 'governance', 'esg'] },
+        { title: 'Research - ESG', url: 'research.html#esg', description: 'Sustainable AI solutions addressing environmental, social, and governance challenges.', keywords: ['esg', 'sustainability', 'environmental', 'social', 'governance'] },
+        { title: 'Research - AI Smart Bike', url: 'research.html#ai-smart-bike', description: 'AI-powered smart bike systems with safety monitoring and edge AI navigation.', keywords: ['ai', 'smart', 'bike', 'iot', 'hardware', 'safety', 'navigation'] },
+        { title: 'Research - Educational Technology', url: 'research.html#educational-technology', description: 'Innovative educational technology solutions including adaptive learning platforms.', keywords: ['edtech', 'educational', 'technology', 'adaptive', 'learning'] },
+        { title: 'Research - Published Papers', url: 'research.html#published-papers', description: 'Cutting-edge machine learning algorithms and neural network architectures.', keywords: ['published', 'papers', 'algorithms', 'neural', 'networks'] },
+        { title: 'Research - Awards', url: 'research.html#awards', description: 'Recognition of research excellence and achievements in AI engineering.', keywords: ['awards', 'recognition', 'achievements', 'excellence'] },
+        { title: 'Team - Faculty', url: 'team.html#faculty', description: 'Leading researchers and professors driving AI innovation at HKU.', keywords: ['faculty', 'professors', 'teachers', 'academic'] },
+        { title: 'Team - Researchers', url: 'team.html#researchers', description: 'Postdoctoral researchers and research fellows advancing AI technologies.', keywords: ['researchers', 'postdoc', 'fellows', 'research', 'scientists'] },
+        { title: 'Team - Students', url: 'team.html#students', description: 'PhD and Master\'s students contributing to cutting-edge AI research.', keywords: ['students', 'phd', 'masters', 'graduate', 'research'] },
+        { title: 'Team - Alumni', url: 'team.html#alumni', description: 'Former members who have moved on to distinguished careers.', keywords: ['alumni', 'former', 'graduates', 'careers'] },
+        { title: 'News - Events', url: 'news.html#events', description: 'Upcoming and past events including conferences, workshops, seminars, and guest lectures.', keywords: ['events', 'conference', 'workshop', 'seminar', 'lecture', 'symposium'] },
+        { title: 'News - Updates', url: 'news.html#updates', description: 'Latest news including research breakthroughs, partnerships, facilities, and achievements.', keywords: ['updates', 'news', 'breakthroughs', 'partnerships', 'facilities', 'achievements'] },
+        { title: 'Contact', url: 'contact.html', description: 'Get in touch with the e-AI Lab at HKU.', keywords: ['contact', 'email', 'location', 'directions'] },
+        { title: 'Join e-AI Lab', url: 'fill.html', description: 'Apply to join the e-AI Lab as a researcher or student.', keywords: ['join', 'apply', 'career', 'opportunities'] }
+      ];
+
+      function toggleSearch() {
+        searchForm.classList.toggle('active');
+        searchResults.classList.remove('active');
+        searchResults.innerHTML = '';
+        if (searchForm.classList.contains('active')) {
+          searchInput.focus();
+        }
+      }
+
+      function openSearch() {
+        searchForm.classList.add('active');
+        searchInput.focus();
+      }
+
+      function closeSearch() {
+        searchForm.classList.remove('active');
+        searchResults.classList.remove('active');
+        searchResults.innerHTML = '';
+        searchInput.value = '';
+      }
+
+      function performSearch(query) {
+        query = query.trim().toLowerCase();
+        if (query.length === 0) {
+          searchResults.classList.remove('active');
+          searchResults.innerHTML = '';
+          return;
+        }
+        const results = pages.filter(page => {
+          if (page.title.toLowerCase().includes(query)) return true;
+          if (page.description.toLowerCase().includes(query)) return true;
+          if (page.keywords && page.keywords.some(k => k.toLowerCase().includes(query))) return true;
+          return false;
+        });
+        displayResults(results, query);
+      }
+
+      function displayResults(results, query) {
+        const queryWords = query.split(' ').filter(w => w.length > 0);
+        if (results.length === 0) {
+          searchResults.innerHTML = `
+            <div class="no-results">
+              <i class="bi bi-search"></i>
+              No results found for "<strong>${query}</strong>"
+              <br><small style="color: #aaa; font-size: 12px;">Try different keywords</small>
+            </div>
+          `;
+          searchResults.classList.add('active');
+          return;
+        }
+        let html = '';
+        results.forEach(page => {
+          let title = page.title;
+          queryWords.forEach(word => {
+            const regex = new RegExp(`(${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+            title = title.replace(regex, '<span class="highlight">$1</span>');
+          });
+          let desc = page.description;
+          queryWords.forEach(word => {
+            const regex = new RegExp(`(${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+            desc = desc.replace(regex, '<span class="highlight">$1</span>');
+          });
+          html += `
+            <div class="result-item" onclick="window.location.href='${page.url}'">
+              <div class="result-title">${title}</div>
+              <div class="result-desc">${desc}</div>
+              <div class="result-url">${page.url}</div>
+            </div>
+          `;
+        });
+        searchResults.innerHTML = html;
+        searchResults.classList.add('active');
+      }
+
+      if (searchToggle) {
+        searchToggle.addEventListener('click', function(e) {
+          e.stopPropagation();
+          toggleSearch();
+        });
+      }
+      if (searchClose) {
+        searchClose.addEventListener('click', function(e) {
+          e.stopPropagation();
+          closeSearch();
+        });
+      }
+      if (searchSubmit) {
+        searchSubmit.addEventListener('click', function(e) {
+          e.preventDefault();
+          performSearch(searchInput.value);
+        });
+      }
+      if (searchInput) {
+        searchInput.addEventListener('keyup', function(e) {
+          if (e.key === 'Enter') {
+            performSearch(this.value);
+          } else {
+            clearTimeout(this.debounceTimer);
+            this.debounceTimer = setTimeout(() => {
+              performSearch(this.value);
+            }, 300);
+          }
+        });
+        searchInput.addEventListener('focus', function() {
+          if (this.value.length > 0) {
+            performSearch(this.value);
+          }
+        });
+      }
+      document.addEventListener('click', function(e) {
+        const searchContainer = document.querySelector('.header_section');
+        const resultsContainer = document.getElementById('searchResults');
+        if (searchContainer && !searchContainer.contains(e.target) && 
+            resultsContainer && !resultsContainer.contains(e.target)) {
+          if (e.target.closest('.result-item')) return;
+          closeSearch();
+        }
+      });
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          if (searchForm.classList.contains('active')) {
+            closeSearch();
+          } else {
+            openSearch();
+          }
+        }
+        if (e.key === 'Escape') {
+          closeSearch();
+        }
+      });
+      const searchFormElement = document.querySelector('.search-form');
+      if (searchFormElement) {
+        searchFormElement.addEventListener('submit', function(e) {
+          e.preventDefault();
+          performSearch(searchInput.value);
+        });
+      }
+    });
+  </script>
 </body>
 </html>

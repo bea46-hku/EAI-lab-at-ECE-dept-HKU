@@ -13,7 +13,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>ECE HKU | Research Areas</title>
+  <title>ECE HKU | Our Team</title>
 
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css"
@@ -28,6 +28,217 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+  
+  <style>
+    /* Team subsections */
+    .team-subsection {
+      padding: 50px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .team-subsection:last-child {
+      border-bottom: none;
+    }
+    
+    .team-subsection:nth-child(even) {
+      background-color: #fafafa;
+    }
+    
+    .team-subsection:nth-child(odd) {
+      background-color: #ffffff;
+    }
+    
+    .team-header-section {
+      background-color: #f8f9fa;
+      padding: 50px 0 30px;
+    }
+    
+    .team-member-card {
+      position: relative;
+      margin: 10px;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .team-member-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+    }
+    
+    .team-member-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .team-member-card:hover img {
+      transform: scale(1.05);
+    }
+    
+    .team-member-card .member-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(2, 70, 56, 0.85));
+      padding: 20px 15px 15px;
+      color: #ffffff;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .team-member-card:hover .member-overlay {
+      opacity: 1;
+    }
+    
+    .team-member-card .member-overlay h5 {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 2px;
+    }
+    
+    .team-member-card .member-overlay p {
+      font-size: 0.8rem;
+      opacity: 0.9;
+      margin-bottom: 0;
+    }
+    
+    .team-member-card .member-overlay .member-role {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #c7a252;
+      font-weight: 600;
+    }
+    
+    .team-member-card .view-link {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      background: rgba(199, 162, 82, 0.9);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+      z-index: 2;
+    }
+    
+    .team-member-card:hover .view-link {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    
+    .team-member-card .view-link img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+    
+    .team-member-card .member-name {
+      padding: 12px 15px 10px;
+      background: #ffffff;
+      text-align: center;
+    }
+    
+    .team-member-card .member-name h5 {
+      color: #024638;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 2px;
+    }
+    
+    .team-member-card .member-name p {
+      color: #888;
+      font-size: 0.8rem;
+      margin-bottom: 0;
+    }
+    
+    .subsection-title {
+      color: #024638;
+      font-weight: 700;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    
+    .subsection-subtitle {
+      color: #888;
+      font-size: 1rem;
+      margin-bottom: 25px;
+    }
+    
+    .anchor-offset {
+      scroll-margin-top: 80px;
+    }
+    
+    .back-to-top {
+      display: inline-block;
+      color: #024638;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: color 0.3s;
+      text-decoration: none;
+    }
+    
+    .back-to-top:hover {
+      color: #c7a252;
+    }
+
+    /* Group photo styles */
+    .group-photo-wrapper {
+      margin: 30px 0 50px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .group-photo-wrapper:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .group-photo-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .group-photo-caption {
+      text-align: center;
+      color: #888;
+      font-size: 0.9rem;
+      margin-top: 12px;
+      font-style: italic;
+    }
+    
+    @media (max-width: 768px) {
+      .team-subsection {
+        padding: 35px 0;
+      }
+      .subsection-title {
+        font-size: 1.4rem;
+      }
+      .team-member-card img {
+        height: 200px;
+      }
+      .group-photo-wrapper {
+        margin: 20px 0 35px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .team-member-card img {
+        height: 180px;
+      }
+    }
+  </style>
 </head>
 
 <body class="sub_page">
@@ -68,7 +279,7 @@
                 </li>
 
                 <!-- Research -->
-                <li class="nav-item dropdown active">
+                <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="research.html" id="researchDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     Research
                   </a>
@@ -83,12 +294,12 @@
                 </li>
 
                 <!-- Team -->
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown active">
                   <a class="nav-link dropdown-toggle" href="team.html" id="teamDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     Team
                   </a>
                   <div class="dropdown-menu" aria-labelledby="teamDropdown">
-                    <a class="dropdown-item" href="team.html">Faculty</a>
+                    <a class="dropdown-item" href="team.html#faculty">Faculty</a>
                     <a class="dropdown-item" href="team.html#researchers">Researchers</a>
                     <a class="dropdown-item" href="team.html#students">Students</a>
                     <div class="dropdown-divider"></div>
@@ -134,131 +345,255 @@
     <!-- end header section -->
   </div>
 
-  <!-- Research Header -->
-  <section class="research-header-section">
+  <!-- Team Header -->
+  <section class="team-header-section">
     <div class="container">
-      <div class="d-flex flex-column align-items-end">
+      <div class="d-flex flex-column align-items-center">
         <div class="custom_heading-container">
           <hr>
-          <h2>Research Areas</h2>
+          <h2>Our Team</h2>
+          <hr>
         </div>
-        <p>The e-AI Lab is engaged in a wide range of research and developmental activities.</p>
+        <p style="color: #555; font-size: 1.05rem;">
+          Meet the brilliant minds behind the e-AI Lab.
+          <br>Our researchers and faculty are driving innovation in AI and engineering.
+        </p>
       </div>
+
+      <!-- GROUP PHOTO -->
+      <div class="group-photo-wrapper">
+        <img src="images/redbrick.jpg" alt="e-AI Lab Team Group Photo">
+      </div>
+      <p class="group-photo-caption">The e-AI Lab team - Working together to engineer the future of AI</p>
     </div>
   </section>
 
-  <!-- ESG -->
-  <section id="esg" class="research-subsection anchor-offset">
+  <!-- Faculty Subsection -->
+  <section id="faculty" class="team-subsection anchor-offset">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-8">
-          <span class="badge-category">Sustainability</span>
-          <h3 class="research-title">ESG</h3>
-          <p class="research-desc">Developing sustainable AI solutions addressing environmental, social, and governance challenges through responsible and ethical AI technologies.</p>
-          <ul class="research-list">
-            <li><strong>Environmental:</strong> Energy-efficient AI systems and green computing</li>
-            <li><strong>Social:</strong> AI promoting equity, inclusion, and social welfare</li>
-            <li><strong>Governance:</strong> Frameworks for responsible AI development</li>
-          </ul>
-          <a href="https://www.eee.hku.hk/" class="research-link">Learn More →</a>
+      <h3 class="subsection-title">Faculty</h3>
+      <p class="subsection-subtitle">Leading researchers and professors driving AI innovation at HKU.</p>
+      
+      <div class="row">
+        <div class="col-md-4 col-sm-6">
+          <div class="team-member-card">
+            <a href="https://ece.hku.hk/people/tlalee/">
+              <img src="images/ATLL2.jpeg" alt="Team Member">
+              <div class="view-link" href="images/ATLL2.jpeg">
+                <img src="images/link.png" alt="View">
+              </div>
+              <div class="member-name">
+                <h5>Ir Dr. Albert Ting Leung LEE</h5>
+                <p>Professor of AI Engineering</p>
+              </div>
+            </a>
+          </div>
         </div>
-        <div class="col-lg-4">
-          <img src="images/p-4.jpg" alt="ESG" class="research-img">
+        <div class="col-md-4 col-sm-6">
+          <div class="team-member-card">
+            <a href="https://ece.hku.hk/people/khlam/">
+              <img src="images/06_khlam2.jpeg" alt="Team Member">
+              <div class="view-link" href="images/06_khlam2.jpeg">
+                <img src="images/link.png" alt="View">
+              </div>
+              <div class="member-name">
+                <h5>Ir Dr. King Hang LAM</h5>
+                <p>Associate Head 
+                  (MSc Teaching and Learning),
+                  Senior Lecturer</p>
+              </div>
+            </a>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- AI Smart Bike -->
-  <section id="ai-smart-bike" class="research-subsection anchor-offset">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-8">
-          <span class="badge-category">Hardware & IoT</span>
-          <h3 class="research-title">AI Smart Bike</h3>
-          <p class="research-desc">Integrating AI with sustainable urban mobility through intelligent bike systems with real-time safety monitoring, predictive maintenance, and edge AI navigation.</p>
-          <ul class="research-list">
-            <li><strong>Safety Monitoring:</strong> AI sensors detecting potential hazards</li>
-            <li><strong>Predictive Maintenance:</strong> ML models predicting component failures</li>
-            <li><strong>Smart Navigation:</strong> Edge AI for real-time routing</li>
-          </ul>
-          <a href="https://www.eee.hku.hk/" class="research-link">Learn More →</a>
-        </div>
-        <div class="col-lg-4">
-          <img src="images/r1.png" alt="AI Smart Bike" class="research-img">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Educational Technology -->
-  <section id="educational-technology" class="research-subsection anchor-offset">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-8">
-          <span class="badge-category">EdTech</span>
-          <h3 class="research-title">Educational Technology</h3>
-          <p class="research-desc">Innovative AI-powered educational solutions including adaptive learning platforms, intelligent tutoring systems, and immersive learning tools.</p>
-          <ul class="research-list">
-            <li><strong>Adaptive Learning:</strong> AI-driven platforms adjusting to student pace</li>
-            <li><strong>Intelligent Tutoring:</strong> AI tutors with personalized feedback</li>
-            <li><strong>Immersive Tools:</strong> AR/VR enhanced with AI for deeper engagement</li>
-          </ul>
-          <a href="https://www.eee.hku.hk/" class="research-link">Learn More →</a>
-        </div>
-        <div class="col-lg-4">
-          <img src="images/software.jpg" alt="Educational Technology" class="research-img">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Published Papers -->
-  <section id="published-papers" class="research-subsection anchor-offset">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-8">
-          <span class="badge-category">Core Research</span>
-          <h3 class="research-title">Published Papers</h3>
-          <p class="research-desc">Cutting-edge research in machine learning algorithms, neural network architectures, and intelligent systems published in top-tier journals and conferences.</p>
-          <ul class="research-list">
-            <li><strong>Machine Learning:</strong> Novel algorithms for supervised and reinforcement learning</li>
-            <li><strong>Neural Networks:</strong> Efficient and scalable neural network models</li>
-            <li><strong>Intelligent Systems:</strong> AI systems that perceive, reason, and act</li>
-          </ul>
-          <a href="https://www.eee.hku.hk/" class="research-link">View All Publications →</a>
-        </div>
-        <div class="col-lg-4">
-          <div class="research-img-grid">
-            <img src="images/r.jpg" alt="Paper 1" class="research-img-small">
-            <img src="images/chiwah.jpg" alt="Paper 2" class="research-img-small">
-            <img src="images/haking.jpg" alt="Paper 3" class="research-img-small">
+        <div class="col-md-4 col-sm-6">
+          <div class="team-member-card">
+            <img src="images/visitor centre.jpg" alt="Team Member">
+            <div class="view-link" href="images/visitor centre.jpg">
+              <img src="images/link.png" alt="View">
+            </div>
+            <div class="member-name">
+              <h5>Prof. Robert Brown</h5>
+              <p>Professor of Intelligent Systems</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Awards -->
-  <section id="awards" class="research-subsection anchor-offset">
+  <!-- Researchers Subsection -->
+  <section id="researchers" class="team-subsection anchor-offset">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-8">
-          <span class="badge-category">Recognition</span>
-          <h3 class="research-title">Awards</h3>
-          <p class="research-desc">Recognitions for research excellence including best paper awards, innovation awards, and research grants from prestigious organizations.</p>
-          <ul class="research-list">
-            <li><strong>Faculty Awards:</strong> Outstanding research contributions and teaching</li>
-            <li><strong>Student Awards:</strong> Exceptional research projects and achievements</li>
-            <li><strong>Research Grants:</strong> Funding from prestigious organizations</li>
-          </ul>
-          <a href="https://www.eee.hku.hk/" class="research-link">View All Achievements →</a>
+      <h3 class="subsection-title">Researchers</h3>
+      <p class="subsection-subtitle">Postdoctoral researchers and research fellows advancing AI technologies.</p>
+      
+      <div class="row">
+        <div class="col-md-4 col-sm-6">
+          <div class="team-member-card">
+            <a href="https://steamerlee.github.io/">
+              <img src="images/Zhenglong_LI.jpg" alt="Researcher">
+              <div class="view-link" href="images/Zhenglong_LI.jpg">
+                <img src="images/link.png" alt="View">
+              </div>
+              <div class="member-name">
+                <h5>Zhenglong LI</h5>
+                <p>Postdoctoral Researcher</p>
+              </div>
+              </a>
+          </div>
         </div>
-        <div class="col-lg-4">
-          <div class="research-img-grid">
-            <img src="images/cpd.jpg" alt="Award 1" class="research-img-small award-border">
-            <img src="images/visitor centre.jpg" alt="Award 2" class="research-img-small award-border">
-            <img src="images/redbrick.jpg" alt="Award 3" class="research-img-small award-border">
+        <div class="col-md-4 col-sm-6">
+          <div class="team-member-card">
+            <img src="images/chiwah.jpg" alt="Researcher">
+            <div class="view-link" href="images/chiwah.jpg">
+              <img src="images/link.png" alt="View">
+            </div>
+            <div class="member-name">
+              <h5>Dr. Michael Wong</h5>
+              <p>Research Fellow</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="team-member-card">
+            <img src="images/haking.jpg" alt="Researcher">
+            <div class="view-link" href="images/haking.jpg">
+              <img src="images/link.png" alt="View">
+            </div>
+            <div class="member-name">
+              <h5>Dr. Lisa Park</h5>
+              <p>Postdoctoral Researcher</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Students Subsection -->
+  <section id="students" class="team-subsection anchor-offset">
+    <div class="container">
+      <h3 class="subsection-title">Students</h3>
+      <p class="subsection-subtitle">PhD and Master's students contributing to cutting-edge AI research.</p>
+      
+      <div class="row">
+        <div class="col-md-4 col-sm-6">
+          <div class="team-member-card">
+            <img src="images/redbrick.jpg" alt="Student">
+            <div class="view-link" href="images/redbrick.jpg">
+              <img src="images/link.png" alt="View">
+            </div>
+            <div class="member-name">
+              <h5>Sarah Lee</h5>
+              <p>PhD Student</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="team-member-card">
+            <img src="images/visitor centre.jpg" alt="Student">
+            <div class="view-link" href="images/visitor centre.jpg">
+              <img src="images/link.png" alt="View">
+            </div>
+            <div class="member-name">
+              <h5>David Kim</h5>
+              <p>PhD Student</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="team-member-card">
+            <img src="images/cpd.jpg" alt="Student">
+            <div class="view-link" href="images/cpd.jpg">
+              <img src="images/link.png" alt="View">
+            </div>
+            <div class="member-name">
+              <h5>Anna Zhang</h5>
+              <p>Master's Student</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="team-member-card">
+            <img src="images/chiwah.jpg" alt="Student">
+            <div class="view-link" href="images/chiwah.jpg">
+              <img src="images/link.png" alt="View">
+            </div>
+            <div class="member-name">
+              <h5>James Wilson</h5>
+              <p>PhD Student</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="team-member-card">
+            <img src="images/haking.jpg" alt="Student">
+            <div class="view-link" href="images/haking.jpg">
+              <img src="images/link.png" alt="View">
+            </div>
+            <div class="member-name">
+              <h5>Maria Garcia</h5>
+              <p>PhD Student</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="team-member-card">
+            <img src="images/mb.jpg" alt="Student">
+            <div class="view-link" href="images/mb.jpg">
+              <img src="images/link.png" alt="View">
+            </div>
+            <div class="member-name">
+              <h5>Tom Chen</h5>
+              <p>Master's Student</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Alumni Subsection -->
+  <section id="alumni" class="team-subsection anchor-offset">
+    <div class="container">
+      <h3 class="subsection-title">Alumni</h3>
+      <p class="subsection-subtitle">Former members who have moved on to distinguished careers in academia and industry.</p>
+      
+      <div class="row">
+        <div class="col-md-4 col-sm-6">
+          <div class="team-member-card">
+            <img src="images/visitor centre.jpg" alt="Alumni">
+            <div class="view-link" href="images/visitor centre.jpg">
+              <img src="images/link.png" alt="View">
+            </div>
+            <div class="member-name">
+              <h5>Dr. Alex Wang</h5>
+              <p>Now at Google AI</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="team-member-card">
+            <img src="images/redbrick.jpg" alt="Alumni">
+            <div class="view-link" href="images/redbrick.jpg">
+              <img src="images/link.png" alt="View">
+            </div>
+            <div class="member-name">
+              <h5>Dr. Laura Martinez</h5>
+              <p>Now at MIT</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="team-member-card">
+            <img src="images/cpd.jpg" alt="Alumni">
+            <div class="view-link" href="images/cpd.jpg">
+              <img src="images/link.png" alt="View">
+            </div>
+            <div class="member-name">
+              <h5>Dr. Kevin Park</h5>
+              <p>Now at Stanford</p>
+            </div>
           </div>
         </div>
       </div>
@@ -354,7 +689,10 @@
         { title: 'Research - Educational Technology', url: 'research.html#educational-technology', description: 'Innovative educational technology solutions including adaptive learning platforms.', keywords: ['edtech', 'educational', 'technology', 'adaptive', 'learning'] },
         { title: 'Research - Published Papers', url: 'research.html#published-papers', description: 'Cutting-edge machine learning algorithms and neural network architectures.', keywords: ['published', 'papers', 'algorithms', 'neural', 'networks'] },
         { title: 'Research - Awards', url: 'research.html#awards', description: 'Recognition of research excellence and achievements in AI engineering.', keywords: ['awards', 'recognition', 'achievements', 'excellence'] },
-        { title: 'Team', url: 'team.html', description: 'Meet our faculty, researchers, students, and alumni at the e-AI Lab.', keywords: ['team', 'faculty', 'researchers', 'students', 'alumni'] },
+        { title: 'Team - Faculty', url: 'team.html#faculty', description: 'Leading researchers and professors driving AI innovation at HKU.', keywords: ['faculty', 'professors', 'teachers', 'academic'] },
+        { title: 'Team - Researchers', url: 'team.html#researchers', description: 'Postdoctoral researchers and research fellows advancing AI technologies.', keywords: ['researchers', 'postdoc', 'fellows', 'research', 'scientists'] },
+        { title: 'Team - Students', url: 'team.html#students', description: 'PhD and Master\'s students contributing to cutting-edge AI research.', keywords: ['students', 'phd', 'masters', 'graduate', 'research'] },
+        { title: 'Team - Alumni', url: 'team.html#alumni', description: 'Former members who have moved on to distinguished careers in academia and industry.', keywords: ['alumni', 'former', 'graduates', 'careers'] },
         { title: 'News', url: 'news.html', description: 'Stay updated with the latest events and updates from the e-AI Lab.', keywords: ['news', 'events', 'updates', 'conference'] },
         { title: 'Contact', url: 'contact.html', description: 'Get in touch with the e-AI Lab at HKU.', keywords: ['contact', 'email', 'location', 'directions'] },
         { title: 'Join e-AI Lab', url: 'fill.html', description: 'Apply to join the e-AI Lab as a researcher or student.', keywords: ['join', 'apply', 'career', 'opportunities'] }
